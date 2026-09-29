@@ -3,77 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DtwinsCentral Fork — a safer, more expressive Wick Editor experience for animation, games, and interactive stories.">
+  <meta name="description" content="DtwinsCentral Fork — a free, secure, open-source Wick Editor for creating games, animations, and interactive stories with skewing, shape tweening, and reusable symbols.">
   <meta name="theme-color" content="#0b1020">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
-  <title>dtwinscentralfork.app · Create without limits</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <title>dtwinscentralfork.app — Free animation editor</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="DtwinsCentral Fork home">
-      <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>dtwinscentral<span class="muted">fork</span><small>.app</small></span>
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="#features">Features</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#security">Security</a>
-      <a class="nav-button" href="https://github.com/dtwinscentral/dtwinscentralfork">View on GitHub</a>
-    </nav>
-  </header>
+  <div class="app-container">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="DtwinsCentral Fork home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>dtwinscentral<span class="muted">fork</span><small>.app</small></span>
+      </a>
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#editor">Editor</a>
+        <a href="#docs">Docs</a>
+        <a class="nav-button" href="https://github.com/dtwinscentral/dtwinscentralfork" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse"></span> An expressive Wick Editor fork</p>
-        <h1>Make ideas <em>move.</em></h1>
-        <p class="lede">A focused creative canvas for games, animations, and interactive stories — with skewing, shape tweening, reusable symbols, and a safer-by-default runtime.</p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/dtwinscentral/dtwinscentralfork">Explore the project <span>↗</span></a>
-          <a class="button secondary" href="#features">See what’s new <span>↓</span></a>
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> Completely free and open</p>
+          <h1>Make ideas <em>move.</em></h1>
+          <p class="lede">A powerful creative canvas for games, animations, and interactive stories. No paywalls, no limits, no restrictions.</p>
+          <div class="actions">
+            <a class="button primary" href="#editor">Launch editor <span>⟶</span></a>
+            <a class="button secondary" href="#features">Explore features <span>↓</span></a>
+          </div>
+          <p class="microcopy">✅ Free forever • Open source • GPLv3 • Built for the web</p>
         </div>
-        <p class="microcopy">Open source · GPLv3 · Built for the web</p>
-      </div>
-      <div class="hero-art" aria-label="Abstract animation preview" role="img">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="shape shape-a"></div>
-        <div class="shape shape-b"></div>
-        <div class="shape shape-c"></div>
-        <div class="art-label"><span class="live-dot"></span> creative mode</div>
-      </div>
-    </section>
-
-    <section id="features" class="section shell">
-      <div class="section-heading"><p class="eyebrow">The toolkit</p><h2>More control.<br><span>More motion.</span></h2></div>
-      <div class="feature-grid">
-        <article class="feature-card accent-orange"><div class="feature-icon">⌁</div><h3>Skew &amp; transform</h3><p>Give objects perspective and personality with independent X/Y skew controls that work across your timeline.</p><a href="docs/SKEWING.md">Read the guide <span>→</span></a></article>
-        <article class="feature-card accent-blue"><div class="feature-icon">◌</div><h3>Shape tweening</h3><p>Morph compatible vector shapes into one another for fluid, organic transitions and expressive effects.</p><a href="docs/SHAPE_TWEENING.md">Read the guide <span>→</span></a></article>
-        <article class="feature-card accent-purple"><div class="feature-icon">▦</div><h3>Symbols &amp; libraries</h3><p>Build once, reuse everywhere. Create symbol masters, compose instances, and organize a library of assets.</p><a href="docs/SYMBOL_LIBRARY.md">Explore the library <span>→</span></a></article>
-      </div>
-    </section>
-
-    <section id="workflow" class="workflow-section">
-      <div class="shell workflow">
-        <div><p class="eyebrow">A simple loop</p><h2>From spark<br>to <span>story.</span></h2></div>
-        <div class="steps">
-          <div class="step"><span>01</span><div><h3>Draw</h3><p>Shape your idea on an approachable, web-first canvas.</p></div></div>
-          <div class="step"><span>02</span><div><h3>Animate</h3><p>Bring it to life with transforms, tweens, and timelines.</p></div></div>
-          <div class="step"><span>03</span><div><h3>Share</h3><p>Export your work and keep your creative building blocks reusable.</p></div></div>
+        <div class="hero-art" aria-label="Abstract animation preview" role="img">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="shape shape-a"></div>
+          <div class="shape shape-b"></div>
+          <div class="shape shape-c"></div>
+          <div class="art-label"><span class="live-dot"></span> creative mode</div>
         </div>
+      </section>
+
+      <section id="about" class="section shell">
+        <div class="about-grid">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>Built on trust,<br><span>powered by freedom.</span></h2>
+            <p class="section-text">DtwinsCentral Fork is an enhanced version of the Wick Editor, a free and open-source tool for creating multimedia. We add powerful animation features like skewing, shape tweening, and a symbol system—all while keeping the runtime secure and the experience simple.</p>
+            <p class="section-text">No tracking, no analytics, no payments. Just a free tool for makers.</p>
+            <a class="text-link" href="https://github.com/dtwinscentral/dtwinscentralfork" target="_blank">Explore the source code <span>→</span></a>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free &amp; open</div></div>
+            <div class="stat"><div class="stat-num">0</div><div class="stat-label">Paywalls</div></div>
+            <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Creative freedom</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section shell">
+        <div class="section-heading"><p class="eyebrow">The toolkit</p><h2>More control.<br><span>More motion.</span></h2></div>
+        <div class="feature-grid">
+          <article class="feature-card accent-orange">
+            <div class="feature-icon">⌁</div>
+            <h3>Skew &amp; transform</h3>
+            <p>Give objects perspective and personality with independent X/Y skew controls that work across your timeline. Create dynamic 3D effects without leaving the editor.</p>
+          </article>
+          <article class="feature-card accent-blue">
+            <div class="feature-icon">◌</div>
+            <h3>Shape tweening</h3>
+            <p>Morph compatible vector shapes into one another for fluid, organic transitions. Perfect for expressive character work and magical transformations.</p>
+          </article>
+          <article class="feature-card accent-purple">
+            <div class="feature-icon">▦</div>
+            <h3>Symbols &amp; libraries</h3>
+            <p>Build once, reuse everywhere. Create symbol masters, compose instances, and organize a library of assets to speed up your workflow.</p>
+          </article>
+          <article class="feature-card accent-orange">
+            <div class="feature-icon">⌘</div>
+            <h3>Timeline &amp; keyframes</h3>
+            <p>Precise frame-by-frame control with an intuitive timeline. Animate anything: position, rotation, scale, skew, and more across unlimited frames.</p>
+          </article>
+          <article class="feature-card accent-blue">
+            <div class="feature-icon">✍</div>
+            <h3>Vector drawing</h3>
+            <p>Built-in drawing tools for creating paths and shapes. Export to standard formats or keep your work inside the project for easy editing.</p>
+          </article>
+          <article class="feature-card accent-purple">
+            <div class="feature-icon">✓</div>
+            <h3>Secure by default</h3>
+            <p>Untrusted projects and imports are validated. Scripts and assets are sandboxed. You can share your work safely knowing the runtime is secure.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="workflow-section">
+        <div class="shell workflow">
+          <div>
+            <p class="eyebrow">A simple loop</p>
+            <h2>From spark<br>to <span>story.</span></h2>
+            <p class="workflow-text">The editor is designed to stay out of your way. Draw, animate, export. That's it.</p>
+          </div>
+          <div class="steps">
+            <div class="step"><span>01</span><div><h3>Draw</h3><p>Create shapes and paths on an accessible, web-first canvas. Import media or build from scratch.</p></div></div>
+            <div class="step"><span>02</span><div><h3>Animate</h3><p>Set keyframes on your timeline. Use transforms, tweens, symbols, and scripts to bring it to life.</p></div></div>
+            <div class="step"><span>03</span><div><h3>Export</h3><p>Publish your animation, game, or interactive story. Download your project file and keep your creative building blocks reusable.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="editor" class="editor-section shell">
+        <div class="editor-frame">
+          <div class="frame-header">
+            <p>Editor Preview</p>
+            <a class="button small" href="/editor.html" target="_blank">Open in new tab</a>
+          </div>
+          <iframe src="editor-placeholder.html" title="DtwinsCentral Fork Editor" class="editor-embed"></iframe>
+        </div>
+        <div class="editor-info">
+          <h2>Start creating<br><span>right now.</span></h2>
+          <p>No installation required. The editor runs entirely in your browser. Your projects are stored locally on your computer. You own your work.</p>
+          <ul class="feature-list">
+            <li>Browser-based — no downloads</li>
+            <li>Local storage — your files stay with you</li>
+            <li>Fast export — share as .html or .gif</li>
+            <li>Mobile friendly — design on the go</li>
+          </ul>
+          <a class="button primary" href="/editor.html" target="_blank">Launch the editor <span>⟶</span></a>
+        </div>
+      </section>
+
+      <section id="docs" class="docs-section">
+        <div class="shell">
+          <p class="eyebrow">Learn</p>
+          <h2>Documentation &amp; guides</h2>
+          <div class="docs-grid">
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/docs/SKEWING.md" class="doc-card" target="_blank">
+              <h3>Skewing guide</h3>
+              <p>Learn how to use skew transforms to create perspective effects and dynamic distortions.</p>
+              <span>→</span>
+            </a>
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/docs/SHAPE_TWEENING.md" class="doc-card" target="_blank">
+              <h3>Shape tweening</h3>
+              <p>Master the art of morphing shapes. Create smooth transitions between different vector paths.</p>
+              <span>→</span>
+            </a>
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/docs/SYMBOLS.md" class="doc-card" target="_blank">
+              <h3>Symbol system</h3>
+              <p>Build reusable components. Create symbol masters and compose instances across your projects.</p>
+              <span>→</span>
+            </a>
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/docs/SYMBOL_LIBRARY.md" class="doc-card" target="_blank">
+              <h3>Symbol library</h3>
+              <p>Explore the built-in symbol library. Import pre-made UI elements, effects, and characters.</p>
+              <span>→</span>
+            </a>
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/SECURITY.md" class="doc-card" target="_blank">
+              <h3>Security model</h3>
+              <p>Understand how the editor keeps your projects safe. Learn about sandboxing and validation.</p>
+              <span>→</span>
+            </a>
+            <a href="https://github.com/dtwinscentral/dtwinscentralfork" class="doc-card" target="_blank">
+              <h3>GitHub repository</h3>
+              <p>View the source code, file issues, contribute, and join the community of makers.</p>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="community shell">
+        <p class="eyebrow">Join us</p>
+        <h2>Made by creators,<br><span>for creators.</span></h2>
+        <p class="community-text">This is a community project. No corporate backing, no venture capital, just makers building tools for makers.</p>
+        <div class="community-links">
+          <a href="https://github.com/dtwinscentral/dtwinscentralfork" target="_blank" class="button secondary">Contribute on GitHub</a>
+          <a href="https://github.com/Wicklets/wick-editor" target="_blank" class="button secondary">Original Wick Editor</a>
+        </div>
+      </section>
+
+      <section class="cta shell">
+        <p class="eyebrow">Ready?</p>
+        <h2>Make something<br><em>unexpected.</em></h2>
+        <a class="button primary" href="/editor.html" target="_blank">Open the editor <span>⟶</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div>
+        <span>© <span id="year"></span> DtwinsCentral Fork</span>
+        <span>Built on <a href="https://github.com/Wicklets/wick-editor" target="_blank">Wick Editor</a></span>
       </div>
-    </section>
+      <div class="footer-links">
+        <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/SECURITY.md" target="_blank">Security</a>
+        <a href="https://github.com/dtwinscentral/dtwinscentralfork/blob/main/LICENSE.md" target="_blank">License (GPLv3)</a>
+        <a href="https://github.com/dtwinscentral/dtwinscentralfork" target="_blank">GitHub</a>
+      </div>
+    </footer>
+  </div>
 
-    <section id="security" class="security shell">
-      <div class="shield" aria-hidden="true">✓</div>
-      <div><p class="eyebrow">Safer by default</p><h2>Your work deserves a <span>secure canvas.</span></h2><p>Untrusted projects, scripts, assets, and symbol libraries are treated carefully. The fork’s security baseline centers on strict content policies, validated imports, and explicit trust for advanced scripting.</p><a class="text-link" href="SECURITY.md">Read the security model <span>→</span></a></div>
-    </section>
-
-    <section class="cta shell"><p class="eyebrow">Ready when you are</p><h2>Make something<br><em>unexpected.</em></h2><a class="button primary" href="https://github.com/dtwinscentral/dtwinscentralfork">Start with the source <span>↗</span></a></section>
-  </main>
-
-  <footer class="site-footer shell"><span>© <span id="year"></span> DtwinsCentral Fork</span><span>Built on Wick Editor · <a href="https://github.com/Wicklets/wick-editor">upstream</a></span></footer>
   <script src="app.js" defer></script>
 </body>
 </html>

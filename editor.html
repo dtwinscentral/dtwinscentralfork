@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DtwinsCentral Fork Editor</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { background: #0b1020; color: #f5f3ef; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; flex-direction: column; }
+    .editor-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.12); background: #121a30; }
+    .editor-title { font-weight: 700; font-size: 1rem; }
+    .editor-close { padding: 8px 14px; background: rgba(255,117,77,.2); color: #ff754d; border: none; border-radius: 6px; cursor: pointer; font-size: .85rem; }
+    .editor-main { flex: 1; display: grid; grid-template-columns: 200px 1fr 250px; }
+    .editor-panel { background: #121a30; border-right: 1px solid rgba(255,255,255,.12); padding: 20px; overflow-y: auto; font-size: .85rem; }
+    .editor-panel:last-child { border-right: none; border-left: 1px solid rgba(255,255,255,.12); }
+    .editor-canvas { background: linear-gradient(45deg, #0e1426 25%, transparent 25%), linear-gradient(-45deg, #0e1426 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #0e1426 75%), linear-gradient(-45deg, transparent 75%, #0e1426 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px; background-color: #0b1020; }
+    .panel-section { margin-bottom: 20px; }
+    .panel-title { font-weight: 700; margin-bottom: 10px; color: #ff754d; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
+    .panel-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .panel-item:last-child { border-bottom: none; }
+    .editor-status { padding: 12px 20px; border-top: 1px solid rgba(255,255,255,.12); background: #121a30; font-size: .8rem; color: #a8a9b7; }
+    .status-dot { display: inline-block; width: 6px; height: 6px; background: #67b7ff; border-radius: 50%; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <div class="editor-header">
+    <div class="editor-title">🎆 DtwinsCentral Fork Editor</div>
+    <a href="/" class="editor-close">Close editor</a>
+  </div>
+  <div class="editor-main">
+    <div class="editor-panel">
+      <div class="panel-section">
+        <div class="panel-title">Layers</div>
+        <div class="panel-item">Background</div>
+        <div class="panel-item">Shape 1</div>
+        <div class="panel-item">Text</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-title">Timeline</div>
+        <div class="panel-item">Frame 1</div>
+        <div class="panel-item">Frame 30</div>
+      </div>
+    </div>
+    <div class="editor-canvas">
+      <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #a8a9b7; text-align: center; flex-direction: column;">
+        <div style="font-size: 3rem; margin-bottom: 20px;">🌀</div>
+        <div style="font-size: 1.2rem; margin-bottom: 10px;">Editor interface ready</div>
+        <div style="font-size: .9rem; color: #777b91;">The full editor runtime will be implemented here.</div>
+      </div>
+    </div>
+    <div class="editor-panel">
+      <div class="panel-section">
+        <div class="panel-title">Transform</div>
+        <div class="panel-item">X: 100px</div>
+        <div class="panel-item">Y: 100px</div>
+        <div class="panel-item">Width: 200px</div>
+        <div class="panel-item">Height: 200px</div>
+        <div class="panel-item">Rotation: 0°</div>
+        <div class="panel-item">Scale: 100%</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-title">Effects</div>
+        <div class="panel-item">Opacity</div>
+        <div class="panel-item">Blend mode</div>
+        <div class="panel-item">Filters</div>
+      </div>
+    </div>
+  </div>
+  <div class="editor-status">
+    <span class="status-dot"></span>Ready to create • No project loaded
+  </div>
+</body>
+</html>
